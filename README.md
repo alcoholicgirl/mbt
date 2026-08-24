@@ -1,3 +1,4 @@
+This repo is vibe coded!!!
 # MBTransient
 
 A multiband transient shaper for [Rust](https://www.rust-lang.org/) built with
