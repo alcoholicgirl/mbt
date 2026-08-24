@@ -1,0 +1,25 @@
+[package]
+name = "mbtransient"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+authors = ["mbtransient"]
+license = "ISC"
+description = "A multiband transient shaper inspired by LHI Audio ST4b"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", rev = "f36931f7af4646065488a9845d8f8c2f95252c23" }
+nih_plug_egui = { path = "vendor/nih_plug_egui" }
+realfft = "3.0"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc = "0.2"
+
+[workspace]
+members = ["xtask", "vendor/nih_plug_egui"]
+
+[profile.release]
+lto = "thin"
